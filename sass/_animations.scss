@@ -1,0 +1,124 @@
+.animate {
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+	opacity: 0;
+}
+
+@-webkit-keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.fadeIn {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+}
+
+$fade-in-up-offset: 50%;
+@-webkit-keyframes fadeInUp {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(0, $fade-in-up-offset, 0);
+		transform: translate3d(0, $fade-in-up-offset, 0);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(0, $fade-in-up-offset, 0);
+		transform: translate3d(0, $fade-in-up-offset, 0);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+
+.fadeInUp {
+	-webkit-animation-name: fadeInUp;
+	animation-name: fadeInUp;
+}
+
+$fade-in-up-small-offset: 20%;
+@-webkit-keyframes fadeInUpSmall {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(0, $fade-in-up-small-offset, 0);
+		transform: translate3d(0, $fade-in-up-small-offset, 0);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+
+@keyframes fadeInUpSmall {
+	from {
+		opacity: 0;
+		-webkit-transform: translate3d(0, $fade-in-up-small-offset, 0);
+		transform: translate3d(0, $fade-in-up-small-offset, 0);
+	}
+	to {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+
+.fadeInUpSmall {
+	-webkit-animation-name: fadeInUpSmall;
+	animation-name: fadeInUpSmall;
+}
+
+@-webkit-keyframes backgroundFade {
+	0%,
+	100% {
+		background-position: 0 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+}
+
+@-moz-keyframes backgroundFade {
+	0%,
+	100% {
+		background-position: 0 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+}
+
+@keyframes backgroundFade {
+	0%,
+	100% {
+		background-position: 0 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+}

@@ -1,0 +1,36 @@
+$slope-height: 200px;
+$slope-top: -100px;
+
+@mixin slope($angle, $color) {
+	@include skew-y($angle);
+	z-index: 1;
+	height: $slope-height;
+	background-color: $color;
+	-webkit-backface-visibility: hidden;
+}
+
+@mixin slope-middle($angle, $color, $width) {
+	@include slope($angle, $color);
+	position: relative;
+	margin: 0 auto;
+	margin-bottom: -$slope-height;
+	max-width: $width;
+	top: $slope-top;
+}
+
+@mixin slope-before($angle, $color) {
+	@include slope($angle, $color);
+	content: '';
+	position: absolute;
+	left: -200%;
+	width: 200%;
+}
+
+@mixin slope-after($angle, $color) {
+	@include slope($angle, $color);
+	content: '';
+	position: absolute;
+	right: -200%;
+	width: 200%;
+}
+

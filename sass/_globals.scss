@@ -1,0 +1,114 @@
+// The font size set on the root html element.
+$base-font-size: 18px !default;
+
+// The base line height determines the basic unit of vertical rhythm.
+$base-line-height: 22px !default;
+
+// The length unit in which to output vertical rhythm values.
+// Supported values: px, em, rem.
+$base-unit: 'em' !default;
+
+// The default font family.
+$base-font-family: 'Varela Round', sans-serif !default;
+
+// The font sizes for h1-h6.
+$h0-font-size: 4    * $base-font-size !default;
+$h1-font-size: 3    * $base-font-size !default;
+$h2-font-size: 2   	* $base-font-size !default;
+$h3-font-size: 1.33 * $base-font-size !default;
+$h4-font-size: 1    * $base-font-size !default;
+$h5-font-size: 0.78 * $base-font-size !default;
+$h6-font-size: 0.67 * $base-font-size !default;
+
+// The amount lists and blockquotes are indented.
+$indent-amount: 20px !default;
+
+// The following variable controls whether normalize-scss will output
+// font-sizes, line-heights and block-level top/bottom margins that form a basic
+// vertical rhythm on the page, which differs from the original Normalize.css.
+// However, changing any of the variables above will cause
+// $normalize-vertical-rhythm to be automatically set to true.
+$normalize-vertical-rhythm: true !default;
+
+// Media queries for different devices
+$screen-small: 'screen and (max-width: 629px)';
+$screen-medium: 'screen and (min-width: 630px) and (max-width: 1129px)';
+$screen-big: 'screen and (min-width: 1130px)';
+
+// Maximum width of content wrap
+$wrap-width: 1500px;
+$wrap-width-small: 1100px;
+
+// Font colors
+$font-color-white: #ffffff;
+$font-color-grey: #e2e2e2;
+$font-color-black: #000000;
+$font-color-yellow: #ecd078;
+$font-color-orange: #d95b43;
+$font-color-red: #ae4442;
+$font-color-purple: #542437;
+$font-color-blue: #53777a;
+
+// Background colors
+$bg-color-white: #f5f5f5;
+$bg-color-grey: #e8e8e8;
+$bg-color-black: #272727;
+$bg-color-orange: #dd6947;
+$bg-color-red: #ae4442;
+$bg-color-purple: #763a52;
+$bg-color-blue: #5d8386;
+
+@mixin transition($properties) {
+	-webkit-transition: $properties;
+	-moz-transition: $properties;
+	-ms-transition: $properties;
+	-o-transition: $properties;
+	transition: $properties;
+}
+
+@mixin skew-y($angle) {
+	-webkit-transform: skewY($angle);
+	-moz-transform: skewY($angle);
+	-ms-transform: skewY($angle);
+	-o-transform: skewY($angle);
+	transform: skewY($angle);
+}
+
+@mixin rotate($angle) {
+	-webkit-transform: rotate($angle);
+	-moz-transform: rotate($angle);
+	-ms-transform: rotate($angle);
+	-o-transform: rotate($angle);
+	transform: rotate($angle);
+}
+
+@mixin columns($count, $gap) {
+	-webkit-column-count: $count;
+	-webkit-column-gap: $gap;
+	-moz-column-count: $count;
+	-moz-column-gap: $gap;
+	column-count: $count;
+	column-gap: $gap;
+}
+
+@mixin flex($direction, $wrap) {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+
+	-webkit-flex-direction: $direction;
+	-moz-flex-direction: $direction;
+	flex-direction: $direction;
+
+	flex-wrap: $wrap;
+	-webkit-flex-wrap: $wrap;
+	-moz-flex-wrap: $wrap;
+}
+
+@mixin flex-item() {
+	-webkit-flex: 1 1 auto;
+  	-ms-flex: 1 1 auto;
+	flex: 1 1 auto;
+}
