@@ -889,6 +889,21 @@ body.show-modal {
   text-decoration: none;
   font-weight: normal;
 }
+#header .logo a .image {
+  float: left;
+  margin-top: -2px;
+  margin-right: 8px;
+  height: 24px;
+  width: 24px;
+  background-image: url(../images/logo_white.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  -webkit-transition: background-image 0.3s ease-out;
+  -moz-transition: background-image 0.3s ease-out;
+  -ms-transition: background-image 0.3s ease-out;
+  -o-transition: background-image 0.3s ease-out;
+  transition: background-image 0.3s ease-out;
+}
 #header .nav {
   float: right;
 }
@@ -1001,6 +1016,14 @@ body.show-modal #header,
 #header.scroll {
   background-color: rgba(255, 255, 255, 0.9);
   color: #696969;
+}
+body.show-modal #header .logo .image,
+#header.scroll .logo .image {
+  background-image: url(../images/logo_black.png);
+}
+body.show-modal #header .logo:hover .image,
+#header.scroll .logo:hover .image {
+  background-image: url(../images/logo_orange.png);
 }
 body.show-modal #header .nav .nav-horizontal li:nth-child(1) a.local:after,
 #header.scroll .nav .nav-horizontal li:nth-child(1) a.local:after {
@@ -1343,21 +1366,10 @@ body.blue #project-title {
   background-color: #272727;
 }
 #footer .content {
+  padding-top: 20px;
+  color: #696969;
   font-size: 14.04px;
-}
-#footer .content .logo {
-  display: none;
-  position: relative;
-  top: -30px;
-  margin: 0 auto;
-  width: 60px;
-  height: 60px;
-  background-color: #2f2f2f;
-  -webkit-transform: rotate(45deg);
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -o-transform: rotate(45deg);
-  transform: rotate(45deg);
+  text-align: center;
 }
 
 /*# sourceMappingURL=main.css.map */

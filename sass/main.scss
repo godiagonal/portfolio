@@ -106,6 +106,18 @@ body.show-modal {
 		a {
 			text-decoration: none;
 			font-weight: normal;
+			
+			.image {
+				float: left;
+				margin-top: -2px;
+				margin-right: 8px;
+				height: 24px;
+				width: 24px;
+				background-image: url(../images/logo_white.png);
+				background-repeat: no-repeat;
+				background-size: 100%;
+				@include transition(background-image 0.3s ease-out);
+			}
 		}
 	}
 
@@ -231,6 +243,14 @@ body.show-modal #header,
 #header.scroll {
 	background-color: rgba(255, 255, 255, 0.9);
 	color: $font-color-grey;
+	
+	.logo .image {
+		background-image: url(../images/logo_black.png);
+	}
+	
+	.logo:hover .image {
+		background-image: url(../images/logo_orange.png);
+	}
 	
 	.nav .nav-horizontal {
 		li:nth-child(1) a.local:after {
@@ -634,17 +654,9 @@ body.blue {
 	background-color: $bg-color-black;
 
 	.content {
+		padding-top: 20px;
+		color: $font-color-grey;
 		font-size: $h5-font-size;
-
-		.logo {
-			display: none;
-			position: relative;
-			top: -30px;
-			margin: 0 auto;
-			width: 60px;
-			height: 60px;
-			background-color: #2f2f2f;
-			@include rotate(45deg);
-		}
+		text-align: center;
 	}
 }
