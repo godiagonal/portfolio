@@ -52,7 +52,7 @@
 			color: $font-color-white;
 			-webkit-font-smoothing: antialiased;
 			opacity: 0;
-			@include transition(opacity 0.2s ease-out);
+			@include transition(opacity 0.25s ease-out);
 
 			.title {
 				position: relative;
@@ -70,8 +70,8 @@
 				margin: 0 auto;
 				height: 2px;
 				width: 1%;
-				background-color: $font-color-grey;
-				@include transition(width 0.25s ease-out);
+				background-color: $font-color-white;
+				@include transition(width 0.3s ease-out);
 			}
 
 			.description {

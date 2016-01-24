@@ -1,56 +1,139 @@
 [{
 	"title": "Hello testing",
 	"introduction": "Just some random words",
-	"image": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg",
+	"images": [
+		"https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg"
+	],
 	"style": "big",
-	"category": "3"
+	"category": "3",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla gravida consequat ipsum, in volutpat dolor. Duis id semper dui. Sed venenatis elit et laoreet consequat. Maecenas a purus ante. Mauris in imperdiet ex. Vivamus sit amet iaculis libero. Duis elementum varius placerat. Etiam eu vulputate justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam maximus feugiat urna, ut malesuada tortor ullamcorper quis.<br><br>Phasellus hendrerit neque eget ornare ultrices. Phasellus sit amet vestibulum lectus, ac sagittis enim. Nunc tempus semper odio sed eleifend. Integer gravida nisi in orci egestas, ac venenatis nunc rutrum.",
+	"info": {
+		"for": "AxCrypt",
+		"at": "ZoCom",
+		"role": "Front and back end developer + Graphic designer",
+		"with": "Svante Seleborg",
+		"link": "http://axcrypt.net"
+	}
+},
+{
+	"title": "AxCrypt",
+	"introduction": "Front end + Back end + Graphic design",
+	"images": [
+		"https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg",
+		"https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg"
+	],
+	"style": "",
+	"category": "1",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla gravida consequat ipsum, in volutpat dolor. Duis id semper dui. Sed venenatis elit et laoreet consequat. Maecenas a purus ante. Mauris in imperdiet ex. Vivamus sit amet iaculis libero. Duis elementum varius placerat. Etiam eu vulputate justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam maximus feugiat urna, ut malesuada tortor ullamcorper quis.<br><br>Phasellus hendrerit neque eget ornare ultrices. Phasellus sit amet vestibulum lectus, ac sagittis enim. Nunc tempus semper odio sed eleifend. Integer gravida nisi in orci egestas, ac venenatis nunc rutrum.",
+	"info": {
+		"for": "AxCrypt",
+		"at": "ZoCom",
+		"role": "Front and back end developer + Graphic designer",
+		"with": "Svante Seleborg",
+		"link": "http://axcrypt.net"
+	}
 },
 {
 	"title": "Hello testing again",
 	"introduction": "Just some random words",
-	"image": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg",
+	"images": [
+		"https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg",
+		"https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg"
+	],
 	"style": "",
-	"category": "1"
+	"category": "3",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla gravida consequat ipsum, in volutpat dolor. Duis id semper dui. Sed venenatis elit et laoreet consequat. Maecenas a purus ante. Mauris in imperdiet ex. Vivamus sit amet iaculis libero. Duis elementum varius placerat. Etiam eu vulputate justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam maximus feugiat urna, ut malesuada tortor ullamcorper quis.<br><br>Phasellus hendrerit neque eget ornare ultrices. Phasellus sit amet vestibulum lectus, ac sagittis enim. Nunc tempus semper odio sed eleifend. Integer gravida nisi in orci egestas, ac venenatis nunc rutrum.",
+	"info": {
+		"for": "AxCrypt",
+		"at": "ZoCom",
+		"role": "Front and back end developer + Graphic designer",
+		"with": "Svante Seleborg",
+		"link": "http://axcrypt.net"
+	}
 },
 {
 	"title": "Hello testing again",
 	"introduction": "Just some random words",
-	"image": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg",
+	"images": [
+		"https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg",
+		"https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg"
+	],
 	"style": "",
-	"category": "3"
+	"category": "2",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla gravida consequat ipsum, in volutpat dolor. Duis id semper dui. Sed venenatis elit et laoreet consequat. Maecenas a purus ante. Mauris in imperdiet ex. Vivamus sit amet iaculis libero. Duis elementum varius placerat. Etiam eu vulputate justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam maximus feugiat urna, ut malesuada tortor ullamcorper quis.<br><br>Phasellus hendrerit neque eget ornare ultrices. Phasellus sit amet vestibulum lectus, ac sagittis enim. Nunc tempus semper odio sed eleifend. Integer gravida nisi in orci egestas, ac venenatis nunc rutrum.",
+	"info": {
+		"for": "AxCrypt",
+		"at": "ZoCom",
+		"role": "Front and back end developer + Graphic designer",
+		"with": "Svante Seleborg",
+		"link": "http://axcrypt.net"
+	}
 },
 {
 	"title": "Hello testing again",
 	"introduction": "Just some random words",
-	"image": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg",
+	"images": [
+		"https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg"
+	],
 	"style": "",
-	"category": "2"
+	"category": "1",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla gravida consequat ipsum, in volutpat dolor. Duis id semper dui. Sed venenatis elit et laoreet consequat. Maecenas a purus ante. Mauris in imperdiet ex. Vivamus sit amet iaculis libero. Duis elementum varius placerat. Etiam eu vulputate justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam maximus feugiat urna, ut malesuada tortor ullamcorper quis.<br><br>Phasellus hendrerit neque eget ornare ultrices. Phasellus sit amet vestibulum lectus, ac sagittis enim. Nunc tempus semper odio sed eleifend. Integer gravida nisi in orci egestas, ac venenatis nunc rutrum.",
+	"info": {
+		"for": "AxCrypt",
+		"at": "ZoCom",
+		"role": "Front and back end developer + Graphic designer",
+		"with": "Svante Seleborg",
+		"link": "http://axcrypt.net"
+	}
 },
 {
 	"title": "Hello testing again",
 	"introduction": "Just some random words",
-	"image": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg",
+	"images": [
+		"https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg"
+	],
 	"style": "",
-	"category": "1"
+	"category": "1",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla gravida consequat ipsum, in volutpat dolor. Duis id semper dui. Sed venenatis elit et laoreet consequat. Maecenas a purus ante. Mauris in imperdiet ex. Vivamus sit amet iaculis libero. Duis elementum varius placerat. Etiam eu vulputate justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam maximus feugiat urna, ut malesuada tortor ullamcorper quis.<br><br>Phasellus hendrerit neque eget ornare ultrices. Phasellus sit amet vestibulum lectus, ac sagittis enim. Nunc tempus semper odio sed eleifend. Integer gravida nisi in orci egestas, ac venenatis nunc rutrum.",
+	"info": {
+		"for": "AxCrypt",
+		"at": "ZoCom",
+		"role": "Front and back end developer + Graphic designer",
+		"with": "Svante Seleborg",
+		"link": "http://axcrypt.net"
+	}
 },
 {
 	"title": "Hello testing again",
 	"introduction": "Just some random words",
-	"image": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg",
+	"images": [
+		"https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/contrail.jpg"
+	],
 	"style": "",
-	"category": "1"
+	"category": "2",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla gravida consequat ipsum, in volutpat dolor. Duis id semper dui. Sed venenatis elit et laoreet consequat. Maecenas a purus ante. Mauris in imperdiet ex. Vivamus sit amet iaculis libero. Duis elementum varius placerat. Etiam eu vulputate justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam maximus feugiat urna, ut malesuada tortor ullamcorper quis.<br><br>Phasellus hendrerit neque eget ornare ultrices. Phasellus sit amet vestibulum lectus, ac sagittis enim. Nunc tempus semper odio sed eleifend. Integer gravida nisi in orci egestas, ac venenatis nunc rutrum.",
+	"info": {
+		"for": "AxCrypt",
+		"at": "ZoCom",
+		"role": "Front and back end developer + Graphic designer",
+		"with": "Svante Seleborg",
+		"link": "http://axcrypt.net"
+	}
 },
 {
 	"title": "Hello testing again",
 	"introduction": "Just some random words",
-	"image": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/contrail.jpg",
+	"images": [
+		"https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/golden-hour.jpg"
+	],
 	"style": "",
-	"category": "2"
-},
-{
-	"title": "Hello testing again",
-	"introduction": "Just some random words",
-	"image": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/golden-hour.jpg",
-	"style": "",
-	"category": "3"
+	"category": "3",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla gravida consequat ipsum, in volutpat dolor. Duis id semper dui. Sed venenatis elit et laoreet consequat. Maecenas a purus ante. Mauris in imperdiet ex. Vivamus sit amet iaculis libero. Duis elementum varius placerat. Etiam eu vulputate justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam maximus feugiat urna, ut malesuada tortor ullamcorper quis.<br><br>Phasellus hendrerit neque eget ornare ultrices. Phasellus sit amet vestibulum lectus, ac sagittis enim. Nunc tempus semper odio sed eleifend. Integer gravida nisi in orci egestas, ac venenatis nunc rutrum.",
+	"info": {
+		"for": "AxCrypt",
+		"at": "ZoCom",
+		"role": "Front and back end developer + Graphic designer",
+		"with": "Svante Seleborg",
+		"link": "http://axcrypt.net"
+	}
 }]

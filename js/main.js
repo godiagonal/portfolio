@@ -5,6 +5,7 @@ var gui = {
 	viewportPosition: 0,
 	viewportBottomPosition: 0,
 	headerScrollOffset: 100,
+	arrowScrollOffset: 200,
 	introHeightExtra: 200,
 	introArrowOffset: 70,
 	scrollToOffset: 100,
@@ -19,12 +20,20 @@ var gui = {
 		gui.initParticles();
 		gui.setIntroHeight();
 		gui.setAnimationWaypoints();
-		
+
 		grid.masonryCallback = gui.checkHash;
 		grid.init();
 
 		$('#work .categories .button').click(gui.toggleCategory);
+		$('#button-grid').click(modal.hide);
 		$('a[href^="#"]').click(gui.scrollTo);
+		
+	},
+
+	keyUp: function (e) {
+		
+		if (e.keyCode === 27) // esc
+			modal.hide();
 		
 	},
 
@@ -34,6 +43,11 @@ var gui = {
 			$('#header').addClass('scroll');
 		else
 			$('#header').removeClass('scroll');
+		
+		if ($(document).scrollTop() > gui.arrowScrollOffset)
+			$('#intro .arrow').addClass('scroll');
+		else
+			$('#intro .arrow').removeClass('scroll');
 
 	},
 
@@ -41,7 +55,7 @@ var gui = {
 
 		gui.viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 		gui.setIntroHeight();
-		
+
 	},
 
 	setIntroHeight: function () {
@@ -49,14 +63,14 @@ var gui = {
 		var containerElem = $('#intro');
 		var textElem = $('#intro .text');
 		var arrowElem = $('#intro .arrow');
-		
+
 		var textOffset = gui.viewportHeight / 2 - textElem.innerHeight() / 2;
 		var textBottomOffset = gui.viewportHeight / 2 + textElem.innerHeight() / 2;
 		var arrowOffset = gui.viewportHeight - arrowElem.innerHeight() - gui.introArrowOffset;
 
 		if (arrowOffset < textBottomOffset)
 			arrowOffset = textBottomOffset;
-		
+
 		containerElem.innerHeight(gui.viewportHeight + gui.introHeightExtra);
 		textElem.css('top', textOffset + 'px');
 		arrowElem.css('top', arrowOffset + 'px');
@@ -94,21 +108,21 @@ var gui = {
 		});
 
 	},
-	
+
 	checkHash: function () {
-		
+
 		var hash = window.location.hash;
-		
+
 		if (hash.substr(0, 1) === '#') {
-			
+
 			var target = $(hash);
-			
+
 			$('html, body').animate({
 				scrollTop: target.offset().top - gui.scrollToOffset
 			}, 700);
-			
+
 		}
-		
+
 	},
 
 	toggleCategory: function () {
@@ -124,13 +138,16 @@ var gui = {
 		var target = $($(this).attr('href'));
 
 		if (target.length) {
-			
+
 			event.preventDefault();
 			
+			// Let's hide the project modal if it's visible
+			modal.hide();
+
 			$('html, body').animate({
 				scrollTop: target.offset().top - gui.scrollToOffset
 			}, 700);
-			
+
 		}
 
 	}
@@ -155,9 +172,9 @@ var grid = {
 
 		$.each(work.data, function (index, project) {
 
-			var elem = $('<div/>').addClass('grid-item').addClass(project.style);
+			var elem = $('<div/>').addClass('grid-item').addClass(project.style).data('project-id', index);
 			var content = $('<div/>').addClass('grid-item-content').appendTo(elem);
-			var image = $('<img/>').attr('src', project.image).appendTo(content);
+			var image = $('<img/>').attr('src', project.images[0]).appendTo(content);
 			var overlay = $('<div/>').addClass('overlay').addClass(work.categoryToColor(project.category)).appendTo(content);
 			var title = $('<div/>').addClass('title').text(project.title).appendTo(overlay);
 			var description = $('<div/>').addClass('description').text(project.introduction).appendTo(overlay);
@@ -187,16 +204,23 @@ var grid = {
 				percentPosition: true
 			});
 
-			grid.masonryObject.on('click', '.grid-item', function () {
-				// open project details
-			});
+			grid.masonryObject.on('click', '.grid-item', grid.clickItem);
 
 			grid.setAnimationWaypoints();
-			
+
 			if (grid.masonryCallback)
 				grid.masonryCallback();
 
 		});
+
+	},
+
+	clickItem: function () {
+
+		var projectId = $(this).data('project-id');
+
+		modal.load(work.data[projectId]);
+		modal.show();
 
 	},
 
@@ -213,6 +237,171 @@ var grid = {
 			offset: '95%'
 		});
 
+	}
+
+};
+
+var modal = {
+
+	carouselTimeout: null,
+	carouselImages: [],
+	carouselIndex: 0,
+	carouselDelay: 7500,
+	detailColor: '',
+	
+	load: function (project) {
+		
+		modal.detailColor = work.categoryToColor(project.category);
+		
+		$('#project-title').text(project.title);
+		$('#project-introduction').text(project.introduction);
+		$('#project-description').html(project.description);
+		$('#project-info').empty();
+		$('#project-images').empty();
+		
+		if (project.info) {
+		
+			for (var key in project.info) {
+				
+				var infoKey = key;
+				var infoValue = project.info[key];
+				
+				switch (key) {
+					case 'for':
+						infoKey = 'For';
+						break;
+					case 'at':
+						infoKey = 'At';
+						break;
+					case 'role':
+						infoKey = 'Role';
+						break;
+					case 'with':
+						infoKey = 'With';
+						break;
+					case 'link':
+						infoKey = 'Live link';
+						infoValue = $('<a/>').text(project.info[key]).attr('href', project.info[key]).attr('target', '_blank');
+						break;
+				}
+				
+				var li = $('<li/>').text(infoKey + ': ');
+				var span = $('<span/>').append(infoValue).addClass('info').appendTo(li);
+				
+				$('#project-info').append(li);
+			}
+			
+		}
+		
+		if (project.images) {
+			
+			var nav = $('<ul/>').addClass('nav');
+			
+			for (var i = 0; i < project.images.length; i++) {
+				
+				var image = $('<div/>').attr('id', 'image-' + i).addClass('image').css('background-image', 'url(' + project.images[i] + ')');
+				
+				// Only create navigation if there's more than one image
+				if (project.images.length > 1)
+					var navLink = $('<li/>').attr('id', 'nav-' + i).data('image-index', i).click(modal.goToImage).appendTo(nav);
+				
+				$('#project-images').append(image);
+				
+			}
+			
+			$('#project-images').append(nav);
+
+			modal.carouselIndex = 0;
+			modal.carouselImages = project.images;
+			modal.stopCarousel();
+			modal.startCarousel();
+		
+		}
+		
+	},
+
+	show: function () {
+
+		$('body').removeClass(function () {
+			
+			var classes = '';
+			
+			for (var key in work.includeCategories) {
+				classes += work.categoryToColor(key) + ' ';
+			}
+			
+			return classes;
+			
+		}).addClass(modal.detailColor).addClass('show-modal');
+			
+		$('#project').fadeIn();
+		
+		if (!gui.isMobile) {
+			$('#project .flex').addClass('animate fadeIn');
+			$('#project-title').addClass('animate fadeInUpSmall');
+			$('#project-introduction').addClass('animate fadeInUp');
+		}
+		
+	},
+
+	hide: function () {
+
+		$('body').removeClass('show-modal');
+		$('#project').fadeOut();
+		
+		modal.stopCarousel();
+
+	},
+	
+	startCarousel: function (stop) {
+		
+		modal.showImage(modal.carouselIndex);
+		
+		modal.carouselIndex++;
+		
+		if (stop) return;
+		
+		// Trigger stop after one loop
+		if (modal.carouselIndex >= modal.carouselImages.length) {
+			
+			modal.carouselIndex = 0;
+			
+			modal.carouselTimeout = setTimeout(function() {
+				modal.startCarousel(true);
+			}, modal.carouselDelay);
+			
+		}
+		else {
+			
+			modal.carouselTimeout = setTimeout(function() {
+				modal.startCarousel(false);
+			}, modal.carouselDelay);
+			
+		}
+
+	},
+	
+	stopCarousel: function () {
+		
+		clearTimeout(modal.carouselTimeout);
+		
+	},
+	
+	goToImage: function () {
+		
+		modal.stopCarousel();
+		modal.showImage($(this).data('image-index'));
+		
+	},
+	
+	showImage: function (index) {
+		
+		$('#project-images .image:not(#image-' + index + ')').removeClass('active');
+		$('#project-images #image-' + index).addClass('active');
+		
+		$('#project-images .nav li:not(#nav-' + index + ')').removeClass('active');
+		$('#project-images #nav-' + index).addClass('active');
+		
 	}
 
 };
@@ -234,8 +423,10 @@ var work = {
 
 			// Filter on category
 			$.each(data, function (index, project) {
+				
 				if (work.includeCategories[project.category])
 					work.data.push(project);
+				
 			});
 
 			callback();
@@ -266,6 +457,7 @@ var work = {
 
 };
 
-document.addEventListener('DOMContentLoaded', gui.init);
+$(document).ready(gui.init);
+$(document).keyup(gui.keyUp);
 $(window).resize(gui.resize);
 $(window).scroll(gui.scroll);

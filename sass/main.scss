@@ -15,6 +15,11 @@ body {
 	//-webkit-animation: backgroundFade 30s linear infinite;
 }
 
+body.show-modal {
+  	height: 100%;
+  	overflow: hidden;
+}
+
 .wrap {
 	z-index: 2;
 	position: relative;
@@ -59,7 +64,7 @@ body {
 	color: $font-color-white;
 	font-size: $h5-font-size;
 	-webkit-font-smoothing: subpixel-antialiased;
-	@include transition(all 0.15s ease-out);
+	@include transition(all 0.3s ease-out);
 }
 
 .button:hover {
@@ -100,6 +105,7 @@ body {
 		
 		a {
 			text-decoration: none;
+			font-weight: normal;
 		}
 	}
 
@@ -111,15 +117,17 @@ body {
 			margin: 0;
 			
 			li {
-				display: inline-block;
+				display: block;
+				float: left;
 				margin-left: 20px;
 				
-				a {
+				a.local {
 					position: relative;
 					text-decoration: none;
+					font-weight: normal;
 				}
 				
-				a:after {
+				a.local:after {
 					content: '';
 					position: absolute;
 					left: 0;
@@ -132,8 +140,36 @@ body {
 					@include transition(width 0.15s ease-out);
 				}
 				
-				a:hover:after {
+				a.local:hover:after {
 					width: 100%;
+				}
+					
+				a:not(.local) {
+					.image {
+						float: left;
+						margin-top: 1px;
+						margin-left: 10px;
+						height: 18px;
+						width: 18px;
+						background-repeat: no-repeat;
+						background-size: 100%;
+						opacity: 0.8;
+						@include transition(all 0.3s ease-out);
+					}
+					
+					.twitter {
+						background-image: url(../images/36_white_twitter.png);
+					}
+					
+					.linkedin {
+						background-image: url(../images/36_white_linkedin.png);
+					}
+				}
+				
+				a:not(.local):hover {
+					.image {
+						opacity: 1;
+					}
 				}
 			}
 			
@@ -142,20 +178,129 @@ body {
 			}
 		}
 	}
+
+	.square-grid {
+		position: absolute;
+		top: -3px;
+		left: 0;
+		right: 0;
+		margin: 0 auto;
+		opacity: 0;
+		cursor: pointer;
+		@include transition(opacity 0.3s ease-out);
+		
+		.square {
+			fill: $bg-color-grey;
+			transform: translate(0, 0);
+			@include transition(all 0.3s ease-out);
+		}
+	}
+
+	.square-grid:hover {
+		.square {
+			fill: $bg-color-black;
+		}
+		
+		#tl {
+			transform: translate(-3px, -3px);
+		}
+		
+		#tm {
+			transform: translateY(-3px);
+		}
+		
+		#tr {
+			transform: translate(3px, -3px);
+		}
+		
+		#bl {
+			transform: translate(-3px, 3px);
+		}
+		
+		#bm {
+			transform: translateY(3px);
+		}
+		
+		#br {
+			transform: translate(3px, 3px);
+		}
+	}
 }
 
+body.show-modal #header,
 #header.scroll {
 	background-color: rgba(255, 255, 255, 0.9);
-	color: $bg-color-black;
+	color: $font-color-grey;
 	
 	.nav .nav-horizontal {
-		li:nth-child(1) a:after {
+		li:nth-child(1) a.local:after {
 			background-color: $bg-color-orange;
 		}
 		
-		li:nth-child(2) a:after {
+		li:nth-child(2) a.local:after {
 			background-color: $bg-color-red;
 		}
+		
+		a:not(.local) {
+			.image {
+				opacity: 1;
+			}
+			
+			.twitter {
+				background-image: url(../images/36_grey_twitter.png);
+			}
+
+			.linkedin {
+				background-image: url(../images/36_grey_linkedin.png);
+			}
+		}
+		
+		a:not(.local):hover {
+			.twitter {
+				background-image: url(../images/36_purple_twitter.png);
+			}
+
+			.linkedin {
+				background-image: url(../images/36_blue_linkedin.png);
+			}
+		}
+	}
+}
+
+body.show-modal #header .square-grid {
+	opacity: 1;
+}
+
+body.red {
+	#header .square-grid:hover .square {
+		fill: $bg-color-red;
+	}
+	
+	#project a,
+	#project-title {
+		color: $font-color-red;
+	}
+}
+
+body.purple {
+	#header .square-grid:hover .square {
+		fill: $bg-color-purple;
+	}
+	
+	#project a,
+	#project-title {
+		color: $font-color-purple;
+	}
+}
+
+body.blue {
+	#header .square-grid:hover .square {
+		fill: $bg-color-blue;
+	}
+	
+	#project a,
+	#project-title {
+		color: $font-color-blue;
 	}
 }
 
@@ -204,30 +349,6 @@ body {
 				padding-bottom: 7px;
 			}
 		}
-		
-		.colors-1 {
-			color: $font-color-yellow;
-		}
-		
-		.colors-2 {
-			color: $font-color-orange;
-		}
-		
-		.colors-3 {
-			color: $font-color-red;
-		}
-		
-		.colors-4 {
-			color: $font-color-purple;
-		}
-		
-		.colors-5 {
-			color: $font-color-blue;
-		}
-		
-		.colors-6 {
-			color: $font-color-blue;
-		}
 	}
 
 	.arrow {
@@ -237,13 +358,22 @@ body {
 		left: 0;
 		right: 0;
 		margin: 0 auto;
-		width: 50px;
-		text-align: center;
-		text-decoration: none;
+		width: 32px;
+		height: 32px;
+		background-image: url(../images/arrow_down.png);
+		background-repeat: no-repeat;
+		background-size: 100%;
+		background-position: center center;
+		opacity: 0.7;
+		@include transition(opacity 0.3s ease-out);
+	}
+
+	.arrow:hover {
+		opacity: 1;
 	}
 
 	.arrow.scroll {
-		display: none;
+		opacity: 0 !important;
 	}
 	
 	.particles-js-canvas-el {
@@ -283,7 +413,6 @@ body {
 		h1 {
 			margin: 80px 0 60px 0;
 			width: $col-1-size;
-			//font-size: $h0-font-size;
 			text-align: center;
 		}
 		
@@ -303,13 +432,56 @@ body {
 		.flex-item:nth-child(2) {
 			width: $col-2-size;
 			padding-left: $col-spacing / 2;
+			
+			a {
+				font-weight: normal;
+				
+				.image {
+					float: left;
+					margin-right: 10px;
+					height: 37px;
+					width: 32px;
+					background-repeat: no-repeat;
+					background-position: 0 5px;
+					background-size: 32px;
+					opacity: 0.9;
+					@include transition(all 0.15s ease-out);
+				}
+
+				.twitter {
+					background-image: url(../images/64_white_twitter.png);
+					margin-right: 15px;
+				}
+
+				.linkedin {
+					background-image: url(../images/64_white_linkedin.png);
+				}
+
+				.facebook {
+					background-image: url(../images/64_white_facebook.png);
+				}
+
+				.instagram {
+					background-image: url(../images/64_white_instagram.png);
+				}
+			}
+
+			a:hover {
+				.image {
+					background-position: 0 0;
+					opacity: 1;
+				}
+			}
 		}
 		
 		.photo {
 			float: left;
 			margin: 20px;
 			margin-left: 0;
+			width: 170px;
 			border-radius: 50%;
+			border: 2px solid $font-color-white;
+			background-color: $font-color-white;
 			-webkit-shape-outside: circle();
 			shape-outside: circle();
 			
@@ -323,10 +495,142 @@ body {
 }
 
 
+/* Project */
+
+#project {
+	display: none;
+	position: fixed;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 4;
+	overflow: scroll;
+	background-color: $bg-color-white;
+	
+	.content {
+		margin: 60px auto;
+		color: $font-color-black;
+		
+		.flex-item:nth-child(1) {
+			width: 50%;
+			
+			@media #{$screen-small} {
+				width: 100%;
+			}
+			
+			.carousel {
+				position: fixed;
+				height: calc(100% - 60px);
+				width: 50%;
+				
+				@media #{$screen-small} {
+					position: relative;
+					width: 100%;
+					height: 400px;
+				}
+		
+				.image {
+					position: absolute;
+					top: 0;
+					width: 100%;
+					height: 100%;
+					background-repeat: no-repeat;
+					background-size: cover;
+					background-position: center center;
+					opacity: 0;
+					@include transition(opacity 0.6s ease-in-out);
+					
+					@media #{$screen-small} {
+						height: 400px;
+					}
+				}
+
+				.image.active {
+					opacity: 1;
+				}
+	
+				.nav {
+					position: absolute;
+					bottom: 20px;
+					left: 0;
+					right: 0;
+					margin: 0 auto;
+    				padding: 0;
+					text-align: center;
+					
+					li {
+						display: inline-block;
+						margin: 0 2px;
+						list-style: none;
+						color: $font-color-white;
+						cursor: pointer;
+						opacity: 0.8;
+					}
+					
+					li:after {
+						content: '';
+						display: block;
+						height: 9px;
+						width: 9px;
+						border: 1px solid $font-color-white;
+					}
+					
+					li.active:after {
+						background-color: $font-color-white;
+					}
+				}
+			}
+		}
+		
+		.flex-item:nth-child(2) {
+			width: calc(50% - 80px);
+			padding: 0 40px;
+			
+			@media #{$screen-small} {
+				width: 100%;
+				padding: 0 20px;
+			}
+
+			#project-title {
+				margin-top: 40px;
+				margin-bottom: 0;
+			}
+
+			#project-introduction {
+				margin-top: 0;
+				color: $font-color-grey;
+			}
+
+			#project-description {
+				
+			}
+
+			#project-info {
+				padding: 0;
+
+				li {
+					list-style: none;
+					font-size: $h5-font-size;
+					color: $font-color-grey;
+					
+					.info {
+						color: $font-color-black;
+						
+						a {
+							font-weight: normal;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
 /* Footer */
 
 #footer {
-	height: 80px;
+	height: 60px;
 	background-color: $bg-color-black;
 
 	.content {
