@@ -101,7 +101,9 @@ var gui = {
 
 	initParticles: function () {
 
-		particlesJS.load('intro', 'particles.json');
+		// No particles for mobile, since it's a real battery drainer
+		if (!gui.isMobile)
+			particlesJS.load('intro', 'particles.json');
 
 	},
 
