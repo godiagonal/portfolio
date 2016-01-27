@@ -563,8 +563,8 @@ body.blue {
 	height: 100%;
 	width: 100%;
 	z-index: 4;
-	overflow-y: scroll;
-	-webkit-overflow-scrolling:touch;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
 	background-color: $bg-color-white;
 	
 	.content {
