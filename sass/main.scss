@@ -98,6 +98,7 @@ body.show-modal {
 	@media #{$screen-small} {
 		background-color: rgba(255, 255, 255, 0.9);
 		color: $bg-color-black;
+
 	}
 	
 	.logo {
@@ -117,6 +118,16 @@ body.show-modal {
 				background-repeat: no-repeat;
 				background-size: 100%;
 				@include transition(background-image 0.3s ease-out);
+				
+				@media #{$screen-small} {
+					background-image: url(../images/logo_black.png);
+				}
+			}
+
+			.text {
+				@media #{$screen-small} {
+					display: none;
+				}
 			}
 		}
 	}
@@ -127,6 +138,12 @@ body.show-modal {
 		.nav-horizontal {
 			padding: 0;
 			margin: 0;
+					
+			@media #{$screen-small} {
+				li:last-child {
+					display: none;
+				}
+			}
 			
 			li {
 				display: block;
@@ -170,11 +187,11 @@ body.show-modal {
 					}
 					
 					.twitter {
-						background-image: url(../images/36_white_twitter.png);
+						background-image: url(../images/social/36_twitter_white.png);
 					}
 					
 					.linkedin {
-						background-image: url(../images/36_white_linkedin.png);
+						background-image: url(../images/social/36_linkedin_white.png);
 					}
 				}
 				
@@ -267,21 +284,21 @@ body.show-modal #header,
 			}
 			
 			.twitter {
-				background-image: url(../images/36_grey_twitter.png);
+				background-image: url(../images/social/36_twitter_grey.png);
 			}
 
 			.linkedin {
-				background-image: url(../images/36_grey_linkedin.png);
+				background-image: url(../images/social/36_linkedin_grey.png);
 			}
 		}
 		
 		a:not(.local):hover {
 			.twitter {
-				background-image: url(../images/36_purple_twitter.png);
+				background-image: url(../images/social/36_twitter_purple.png);
 			}
 
 			.linkedin {
-				background-image: url(../images/36_blue_linkedin.png);
+				background-image: url(../images/social/36_linkedin_blue.png);
 			}
 		}
 	}
@@ -356,6 +373,10 @@ body.blue {
 			display: block;
 			font-size: 52px;
 			line-height: 1.3em;
+			
+			@media #{$screen-small} {
+				line-height: 1.1em;
+			}
 		}
 		
 		.code {
@@ -380,7 +401,7 @@ body.blue {
 		margin: 0 auto;
 		width: 32px;
 		height: 32px;
-		background-image: url(../images/arrow_down.png);
+		background-image: url(../images/arrow_down_white.png);
 		background-repeat: no-repeat;
 		background-size: 100%;
 		background-position: center center;
@@ -414,6 +435,24 @@ body.blue {
 		
 		.categories {
 			margin: 40px 0 60px 0;
+		}
+		
+		.spinner {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 50px;
+			margin: 0 auto;
+			width: 40px;
+			height: 40px;
+			background-color: $font-color-white;
+			-webkit-animation: rotateplane 1.2s infinite ease-in-out;
+			animation: rotateplane 1.2s infinite ease-in-out;
+			@include transition(opacity 0.3s ease-out);
+		}
+		
+		.spinner.hidden {
+			opacity: 0;
 		}
 	}
 }
@@ -469,20 +508,20 @@ body.blue {
 				}
 
 				.twitter {
-					background-image: url(../images/64_white_twitter.png);
+					background-image: url(../images/social/64_twitter_white.png);
 					margin-right: 15px;
 				}
 
 				.linkedin {
-					background-image: url(../images/64_white_linkedin.png);
+					background-image: url(../images/social/64_linkedin_white.png);
 				}
 
 				.facebook {
-					background-image: url(../images/64_white_facebook.png);
+					background-image: url(../images/social/64_facebook_white.png);
 				}
 
 				.instagram {
-					background-image: url(../images/64_white_instagram.png);
+					background-image: url(../images/social/64_instagram_white.png);
 				}
 			}
 

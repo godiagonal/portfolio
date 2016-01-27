@@ -1,6 +1,7 @@
 var gui = {
 
 	isMobile: false,
+	isSafari: false,
 	viewportHeight: 0,
 	viewportPosition: 0,
 	viewportBottomPosition: 0,
@@ -9,10 +10,12 @@ var gui = {
 	introHeightExtra: 200,
 	introArrowOffset: 70,
 	scrollToOffset: 100,
+	masonryResizeTimeout: null,
 
 	init: function () {
 
 		gui.isMobile = bowser.mobile;
+		gui.isSafari = bowser.safari;
 		gui.viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 		gui.viewportPosition = $(document).scrollTop();
 		gui.viewportBottomPosition = gui.viewportPosition + gui.viewportHeight;
@@ -27,6 +30,18 @@ var gui = {
 		$('#work .categories .button').click(gui.toggleCategory);
 		$('#button-grid').click(modal.hide);
 		$('a[href^="#"]').click(gui.scrollTo);
+		
+		gui.preloadImages([
+			'images/social/36_linkedin_white.png',
+			'images/social/36_linkedin_grey.png',
+			'images/social/36_linkedin_blue.png',
+			'images/social/36_twitter_white.png',
+			'images/social/36_twitter_grey.png',
+			'images/social/36_twitter_purple.png',
+			'images/logo_white.png',
+			'images/logo_black.png',
+			'images/logo_orange.png'
+		]);
 		
 	},
 
@@ -55,6 +70,13 @@ var gui = {
 
 		gui.viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 		gui.setIntroHeight();
+		
+		// There's a bug in Safari where the grid isn't properly laid out after
+		// a window resize. For now this workaround will suffice.
+		if (gui.isSafari) {
+			clearTimeout(gui.masonryResizeTimeout);
+			gui.masonryResizeTimeout = setTimeout(grid.initMasonry, 500);
+		}
 
 	},
 
@@ -150,6 +172,14 @@ var gui = {
 
 		}
 
+	},
+	
+	preloadImages: function (images) {
+		
+		$(images).each(function(){
+			$('<img/>')[0].src = this;
+		});
+		
 	}
 
 };
@@ -195,9 +225,11 @@ var grid = {
 			grid.masonryObject.masonry('destroy');
 			grid.masonryObject = null;
 		}
-
+		
 		grid.masonryObject = $('#work-grid').imagesLoaded(function () {
 
+			$('#work-spinner').addClass('hidden');
+			
 			grid.masonryObject.masonry({
 				itemSelector: '.grid-item',
 				columnWidth: '.grid-sizer',
@@ -321,7 +353,7 @@ var modal = {
 	},
 
 	show: function () {
-		
+
 		$('body').removeClass(function () {
 
 			var classes = '';
@@ -333,7 +365,7 @@ var modal = {
 			return classes;
 
 		}).addClass(modal.detailColor).addClass('show-modal');
-
+		
 		$('#project').fadeIn();
 		
 		if (!gui.isMobile) {
