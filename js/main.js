@@ -321,24 +321,20 @@ var modal = {
 	},
 
 	show: function () {
+		
+		$('body').removeClass(function () {
 
-		// Wait for fadeIn to finish before removing body scroll bars
-		// to prevent glitchyness in Windows browsers
-		$('#project').fadeIn(function() {
-			
-			$('body').removeClass(function () {
+			var classes = '';
 
-				var classes = '';
+			for (var key in work.includeCategories) {
+				classes += work.categoryToColor(key) + ' ';
+			}
 
-				for (var key in work.includeCategories) {
-					classes += work.categoryToColor(key) + ' ';
-				}
+			return classes;
 
-				return classes;
+		}).addClass(modal.detailColor).addClass('show-modal');
 
-			}).addClass(modal.detailColor).addClass('show-modal');
-
-		});
+		$('#project').fadeIn();
 		
 		if (!gui.isMobile) {
 			$('#project .flex').addClass('animate fadeIn');
