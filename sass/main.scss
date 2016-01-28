@@ -143,6 +143,14 @@ body.show-modal {
 				li:last-child {
 					display: none;
 				}
+				
+				li:nth-child(1) a.local:after {
+					background-color: $bg-color-orange;
+				}
+
+				li:nth-child(2) a.local:after {
+					background-color: $bg-color-red;
+				}
 			}
 			
 			li {
