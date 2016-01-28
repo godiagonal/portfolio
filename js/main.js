@@ -58,6 +58,9 @@ var gui = {
 
 	scroll: function () {
 
+		if (gui.isMobile)
+			return;
+		
 		if ($(document).scrollTop() > gui.headerScrollOffset)
 			$('#header').addClass('scroll');
 		else
