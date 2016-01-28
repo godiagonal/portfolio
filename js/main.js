@@ -75,6 +75,9 @@ var gui = {
 
 	resize: function () {
 
+		if (gui.isMobile)
+			return;
+		
 		gui.viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
 		gui.setIntroHeight();
 		
