@@ -1,3 +1,7 @@
+/*global $ */
+/*global bowser */
+/*global particlesJS */
+
 var gui = {
 
 	isMobile: false,

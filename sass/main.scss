@@ -9,8 +9,8 @@
 body {
 	color: $font-color-white;
 	-webkit-font-smoothing: antialiased;
-	background-image: linear-gradient(115deg, #f99e54, #f26966, #dd5c58, #772828);
-	background-size: 400% 100%;
+	background-image: linear-gradient(115deg, #f99e54, #f26966, #dd5c58);
+	background-size: 200% 100%;
 	//animation: backgroundFade 30s linear infinite;
 	//-webkit-animation: backgroundFade 30s linear infinite;
 }
@@ -193,6 +193,10 @@ body.show-modal {
 					.linkedin {
 						background-image: url(../images/social/36_linkedin_white.png);
 					}
+					
+					.github {
+						background-image: url(../images/social/36_github_white.png);
+					}
 				}
 				
 				a:not(.local):hover {
@@ -290,15 +294,23 @@ body.show-modal #header,
 			.linkedin {
 				background-image: url(../images/social/36_linkedin_grey.png);
 			}
+
+			.github {
+				background-image: url(../images/social/36_github_grey.png);
+			}
 		}
 		
 		a:not(.local):hover {
 			.twitter {
-				background-image: url(../images/social/36_twitter_purple.png);
+				background-image: url(../images/social/36_twitter_blue.png);
 			}
 
 			.linkedin {
 				background-image: url(../images/social/36_linkedin_blue.png);
+			}
+
+			.github {
+				background-image: url(../images/social/36_github_blue.png);
 			}
 		}
 	}
@@ -314,8 +326,8 @@ body.red {
 	}
 	
 	#project a,
-	#project-title {
-		color: $font-color-red;
+	#project-introduction {
+		color: $font-color-red !important;
 	}
 }
 
@@ -325,8 +337,8 @@ body.purple {
 	}
 	
 	#project a,
-	#project-title {
-		color: $font-color-purple;
+	#project-introduction {
+		color: $font-color-purple !important;
 	}
 }
 
@@ -336,8 +348,8 @@ body.blue {
 	}
 	
 	#project a,
-	#project-title {
-		color: $font-color-blue;
+	#project-introduction {
+		color: $font-color-blue !important;
 	}
 }
 
@@ -507,6 +519,11 @@ body.blue {
 					@include transition(all 0.15s ease-out);
 				}
 
+				.github {
+					background-image: url(../images/social/64_github_white.png);
+					margin-right: 15px;
+				}
+
 				.twitter {
 					background-image: url(../images/social/64_twitter_white.png);
 					margin-right: 15px;
@@ -652,7 +669,7 @@ body.blue {
 			}
 
 			#project-title {
-				margin-top: 40px;
+				margin-top: 60px;
 				margin-bottom: 0;
 			}
 
