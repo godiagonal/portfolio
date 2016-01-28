@@ -398,8 +398,7 @@ body.blue {
 			font-family: Consolas, Monaco, monospace;
 			
 			@media #{$screen-small} {
-				padding-top: 7px;
-				padding-bottom: 7px;
+				padding: 5px 3px;
 			}
 		}
 	}
