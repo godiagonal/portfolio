@@ -117,7 +117,7 @@ body.show-modal {
 				background-image: url(../images/logo_white.png);
 				background-repeat: no-repeat;
 				background-size: 100%;
-				@include transition(background-image 0.3s ease-out);
+				@include transition(all 0.3s ease-out);
 				
 				@media #{$screen-small} {
 					background-image: url(../images/logo_black.png);
@@ -198,10 +198,6 @@ body.show-modal {
 						background-image: url(../images/social/36_twitter_white.png);
 					}
 					
-					.linkedin {
-						background-image: url(../images/social/36_linkedin_white.png);
-					}
-					
 					.github {
 						background-image: url(../images/social/36_github_white.png);
 					}
@@ -274,11 +270,12 @@ body.show-modal #header,
 	color: $font-color-grey;
 	
 	.logo .image {
-		background-image: url(../images/logo_black.png);
+		background-image: url(../images/logo_orange.png);
+		@include greyscale(100%);
 	}
 	
 	.logo:hover .image {
-		background-image: url(../images/logo_orange.png);
+		@include greyscale(0%);
 	}
 	
 	.nav .nav-horizontal {
@@ -292,33 +289,24 @@ body.show-modal #header,
 		
 		a:not(.local) {
 			.image {
-				opacity: 1;
+				@include greyscale(100%);
 			}
 			
 			.twitter {
-				background-image: url(../images/social/36_twitter_grey.png);
-			}
-
-			.linkedin {
-				background-image: url(../images/social/36_linkedin_grey.png);
+				background-image: url(../images/social/36_twitter_blue.png);
+				opacity: 0.5;
 			}
 
 			.github {
-				background-image: url(../images/social/36_github_grey.png);
+				background-image: url(../images/social/36_github_purple.png);
+				opacity: 0.3;
 			}
 		}
 		
 		a:not(.local):hover {
-			.twitter {
-				background-image: url(../images/social/36_twitter_blue.png);
-			}
-
-			.linkedin {
-				background-image: url(../images/social/36_linkedin_blue.png);
-			}
-
-			.github {
-				background-image: url(../images/social/36_github_blue.png);
+			.image {
+				opacity: 1;
+				@include greyscale(0%);
 			}
 		}
 	}
@@ -334,7 +322,7 @@ body.red {
 	}
 	
 	#project a,
-	#project-introduction {
+	#project- {
 		color: $font-color-red !important;
 	}
 }
@@ -345,7 +333,7 @@ body.purple {
 	}
 	
 	#project a,
-	#project-introduction {
+	#project- {
 		color: $font-color-purple !important;
 	}
 }
@@ -356,7 +344,7 @@ body.blue {
 	}
 	
 	#project a,
-	#project-introduction {
+	#project- {
 		color: $font-color-blue !important;
 	}
 }
@@ -591,104 +579,100 @@ body.blue {
 	-webkit-overflow-scrolling: touch;
 	background-color: $bg-color-white;
 	
+	.full-width {
+		background-color: $bg-color-grey;
+	}
+	
 	.content {
-		margin: 60px auto;
+		margin: 60px auto 0 auto;
 		color: $font-color-black;
 		
-		.flex-item:nth-child(1) {
-			width: 50%;
-			
+		.carousel {
+			position: relative;
+			height: 500px;
+
 			@media #{$screen-small} {
-				width: 100%;
+				height: 400px;
 			}
-			
-			.carousel {
-				position: fixed;
-				height: calc(100% - 60px);
-				width: 50%;
-				
+
+			.image {
+				position: absolute;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center center;
+				opacity: 0;
+				@include transition(opacity 0.6s ease-in-out);
+
 				@media #{$screen-small} {
-					position: relative;
-					width: 100%;
 					height: 400px;
 				}
-		
-				.image {
-					position: absolute;
-					top: 0;
-					width: 100%;
-					height: 100%;
-					background-repeat: no-repeat;
-					background-size: cover;
-					background-position: center center;
-					opacity: 0;
-					@include transition(opacity 0.6s ease-in-out);
-					
-					@media #{$screen-small} {
-						height: 400px;
-					}
+			}
+
+			.image.active {
+				opacity: 1;
+			}
+
+			.nav {
+				position: absolute;
+				bottom: 20px;
+				left: 0;
+				right: 0;
+				margin: 0 auto;
+				padding: 0;
+				text-align: center;
+
+				li {
+					display: inline-block;
+					margin: 0 2px;
+					list-style: none;
+					color: $font-color-white;
+					cursor: pointer;
+					opacity: 0.8;
 				}
 
-				.image.active {
-					opacity: 1;
+				li:after {
+					content: '';
+					display: block;
+					height: 9px;
+					width: 9px;
+					border: 1px solid $font-color-white;
 				}
-	
-				.nav {
-					position: absolute;
-					bottom: 20px;
-					left: 0;
-					right: 0;
-					margin: 0 auto;
-    				padding: 0;
-					text-align: center;
-					
-					li {
-						display: inline-block;
-						margin: 0 2px;
-						list-style: none;
-						color: $font-color-white;
-						cursor: pointer;
-						opacity: 0.8;
-					}
-					
-					li:after {
-						content: '';
-						display: block;
-						height: 9px;
-						width: 9px;
-						border: 1px solid $font-color-white;
-					}
-					
-					li.active:after {
-						background-color: $font-color-white;
-					}
+
+				li.active:after {
+					background-color: $font-color-white;
 				}
 			}
 		}
-		
-		.flex-item:nth-child(2) {
-			width: calc(50% - 80px);
-			padding: 0 40px;
+
+		$col-spacing: 100px;
+		$col-1-size: calc(30% - #{$col-spacing / 2});
+		$col-2-size: calc(70% - #{$col-spacing / 2});
+
+		.flex-item {
+			padding-top: 40px;
 			
 			@media #{$screen-small} {
-				width: 100%;
-				padding: 0 20px;
+				width: 100% !important;
 			}
-
+		}
+		
+		.flex-item:nth-child(1) {
+			width: $col-1-size;
+			padding-right: $col-spacing / 2;
+			
+			@media #{$screen-small} {
+				padding: 0;
+			}
+			
 			#project-title {
-				margin-top: 60px;
-				margin-bottom: 0;
+				@media #{$screen-small} {
+					margin-top: 40px;
+				}
 			}
-
-			#project-introduction {
-				margin-top: 0;
-				color: $font-color-grey;
-			}
-
-			#project-description {
-				
-			}
-
+			
 			#project-info {
 				padding: 0;
 
@@ -705,6 +689,52 @@ body.blue {
 						}
 					}
 				}
+			}
+		}
+		
+		.flex-item:nth-child(2) {
+			width: $col-2-size;
+			padding-left: $col-spacing / 2;
+			padding-bottom: 40px;
+			
+			@media #{$screen-small} {
+				padding: 0;
+				padding-bottom: 20px;
+			}
+				
+			#project-description {
+				@media #{$screen-small} {
+					margin-top: 10px;
+				}
+				
+				a {
+					font-weight: normal;
+				}
+			}
+		}
+
+		#project-images {
+			padding: 60px 0;
+			
+			@media #{$screen-small} {
+				padding: 40px 0;
+			}
+			
+			img {
+				display: block;
+				margin-bottom: 60px;
+				width: 100%;
+				opacity: 0;
+				$shadow-properties: 0px 5px 15px 0px rgba(0,0,0,0.3);
+				@include box-shadow($shadow-properties);
+				
+				@media #{$screen-small} {
+					margin-bottom: 40px;
+				}
+			}
+			
+			img:last-child {
+				margin-bottom: 0;
 			}
 		}
 	}

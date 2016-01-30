@@ -17,17 +17,7 @@
 	}
 }
 
-.grid-item.big {
-	width: 66.666%;
-		
-	@media #{$screen-small} {
-		width: 100%;
-	}
-		
-	@media #{$screen-medium} {
-		width: 50%;
-	}
-}
+$overlay-opacity: 0.9;
 
 .grid-item {
 	float: left;
@@ -48,7 +38,7 @@
 			height: 100%;
 			margin: 0;
 			padding: 0;
-			background-color: $bg-color-black;
+			background-color: rgba($bg-color-black, $overlay-opacity);
 			color: $font-color-white;
 			-webkit-font-smoothing: antialiased;
 			opacity: 0;
@@ -81,24 +71,6 @@
 				font-size: $h5-font-size;
 			}
 		}
-
-		$overlay-opacity: 0.9;
-
-		.overlay.red {
-			background-color: rgba($bg-color-red, $overlay-opacity);
-		}
-
-		.overlay.orange {
-			background-color: rgba($bg-color-orange, $overlay-opacity);
-		}
-
-		.overlay.purple {
-			background-color: rgba($bg-color-purple, $overlay-opacity);
-		}
-
-		.overlay.blue {
-			background-color: rgba($bg-color-blue, $overlay-opacity);
-		}
 	}
 }
 
@@ -112,4 +84,28 @@
 			width: 50%;
 		}
 	}
+}
+
+.grid-item.big {
+	width: 66.666%;
+		
+	@media #{$screen-small} {
+		width: 100%;
+	}
+		
+	@media #{$screen-medium} {
+		width: 50%;
+	}
+}
+
+.grid-item.red .overlay {
+	background-color: rgba($bg-color-red, $overlay-opacity);
+}
+
+.grid-item.purple .overlay {
+	background-color: rgba($bg-color-purple, $overlay-opacity);
+}
+
+.grid-item.blue .overlay {
+	background-color: rgba($bg-color-blue, $overlay-opacity);
 }

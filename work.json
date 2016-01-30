@@ -1,139 +1,153 @@
 [{
-	"title": "Hello testing",
-	"introduction": "Just some random words",
+	"title": "AxCrypt",
+	"introduction": "Interactive + ASP.NET MVC + Branding",
+	"preview": "images/work/axcrypt_cover.jpg",
+	"cover": ["images/work/axcrypt_cover.jpg"],
 	"images": [
-		"https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg"
+		"images/work/axcrypt_home.jpg",
+		"images/work/axcrypt_download.jpg",
+		"images/work/axcrypt_account.jpg",
+		"images/work/axcrypt_purchase.jpg",
+		"images/work/axcrypt_passwords.jpg",
+		"images/work/axcrypt_password.jpg"
 	],
 	"style": "big",
-	"category": "3",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla gravida consequat ipsum, in volutpat dolor. Duis id semper dui. Sed venenatis elit et laoreet consequat. Maecenas a purus ante. Mauris in imperdiet ex. Vivamus sit amet iaculis libero. Duis elementum varius placerat. Etiam eu vulputate justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam maximus feugiat urna, ut malesuada tortor ullamcorper quis.<br><br>Phasellus hendrerit neque eget ornare ultrices. Phasellus sit amet vestibulum lectus, ac sagittis enim. Nunc tempus semper odio sed eleifend. Integer gravida nisi in orci egestas, ac venenatis nunc rutrum.",
+	"color": "purple",
+	"category": ["1", "2", "3"],
+	"description": "AxCrypt is one of the most downloaded file encryption softwares in the world and has received outstanding reviews over the years since it was first released in 2001. Today, fifteen years later, I’m proud to be a part of the launch of AxCrypt 2.0. It’s been a blast working together with the company founder and lead developer, Svante Seleborg, over the past year in developing the new web.<br><br>AxCrypt is mostly known for its simplicity, security and reliability. All of which has been in focus when developing the new web platform. For security reasons, the site is divided in two completely separate environments. The main site is developed in Wordpress and the account site is developed in ASP.NET MVC.<br><br>My responsibilities have been to develop the whole web platform, the graphical profile and the logotype. It’s been one of the most challenging projects I’ve ever worked on and, because of that, also the most rewarding one.",
 	"info": {
 		"for": "AxCrypt",
 		"at": "ZoCom",
-		"role": "Front and back end developer + Graphic designer",
+		"role": "Front end + Back end + Graphic design",
 		"with": "Svante Seleborg",
 		"link": "http://axcrypt.net"
 	}
 },
 {
-	"title": "AxCrypt",
-	"introduction": "Front end + Back end + Graphic design",
+	"title": "Scroll the Solar System",
+	"introduction": "Interactive + Educational + Graphic design",
+	"preview": "images/work/solarsystem_preview.jpg",
+	"cover": ["images/work/solarsystem_cover.jpg"],
 	"images": [
-		"https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg",
-		"https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg"
+		"images/work/solarsystem_overview.jpg",
+		"images/work/solarsystem_exploration_sun.jpg",
+		"images/work/solarsystem_exploration_earth.jpg",
+		"images/work/solarsystem_exploration_jupiter.jpg",
+		"images/work/solarsystem_exploration_kuiper.jpg"
 	],
 	"style": "",
-	"category": "1",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla gravida consequat ipsum, in volutpat dolor. Duis id semper dui. Sed venenatis elit et laoreet consequat. Maecenas a purus ante. Mauris in imperdiet ex. Vivamus sit amet iaculis libero. Duis elementum varius placerat. Etiam eu vulputate justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam maximus feugiat urna, ut malesuada tortor ullamcorper quis.<br><br>Phasellus hendrerit neque eget ornare ultrices. Phasellus sit amet vestibulum lectus, ac sagittis enim. Nunc tempus semper odio sed eleifend. Integer gravida nisi in orci egestas, ac venenatis nunc rutrum.",
+	"color": "red",
+	"category": ["1", "3"],
+	"description": "A hobby project that combines my interests for astronomy, graphic design and web development.<br><br>It’s an interactive model of the solar system made with JavaScript and vector graphics. The overview mode displays our solar system and what it looks like today from a bird's eye view, according to NASA's calculations. The slider can be used to make the planets travel back and forth in time. Then there’s the exploration mode, which allows the user to travel through space at superluminal velocities and learn more about the major bodies in our solar system.<br><br>Planetary data is fetched from <a href='http://ssd.jpl.nasa.gov/horizons.cgi' target='_blank'>NASA Horizons Web API</a> and the scroll animations are made possible with the brilliance of <a href='http://scrollmagic.io/' target='_blank'>ScrollMagic</a> and <a href='https://greensock.com/tweenmax' target='_blank'>TweenMax</a>.",
 	"info": {
-		"for": "AxCrypt",
-		"at": "ZoCom",
-		"role": "Front and back end developer + Graphic designer",
-		"with": "Svante Seleborg",
-		"link": "http://axcrypt.net"
+		"role": "Front end + Graphic design",
+		"link": "http://scrollthesolarsystem.com"
 	}
 },
 {
-	"title": "Hello testing again",
-	"introduction": "Just some random words",
+	"title": "Tokyo Metro 2010",
+	"introduction": "Infographics",
+	"preview": "images/work/tokyometro_preview.jpg",
+	"cover": ["images/work/tokyometro_cover.jpg"],
 	"images": [
-		"https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg",
-		"https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg"
+		"images/work/tokyometro_preview_big.jpg"
 	],
 	"style": "",
-	"category": "3",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla gravida consequat ipsum, in volutpat dolor. Duis id semper dui. Sed venenatis elit et laoreet consequat. Maecenas a purus ante. Mauris in imperdiet ex. Vivamus sit amet iaculis libero. Duis elementum varius placerat. Etiam eu vulputate justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam maximus feugiat urna, ut malesuada tortor ullamcorper quis.<br><br>Phasellus hendrerit neque eget ornare ultrices. Phasellus sit amet vestibulum lectus, ac sagittis enim. Nunc tempus semper odio sed eleifend. Integer gravida nisi in orci egestas, ac venenatis nunc rutrum.",
+	"color": "blue",
+	"category": ["3"],
+	"description": "This graphic is based on a spreadsheet of Tokyo Metro statistics from 2010, including amount of passengers per line and railway track length. In addition, I added the white circles which represent the amount of boarding and disembarking passengers per station and the lines between them which show how the stations are connected to each other.<br><br>If printed in A3 format, the scale of the diagram's diameter relative to the actual railway track length (1:100 000) is accurate. Practical use? None really!",
 	"info": {
-		"for": "AxCrypt",
-		"at": "ZoCom",
-		"role": "Front and back end developer + Graphic designer",
-		"with": "Svante Seleborg",
-		"link": "http://axcrypt.net"
+		"role": "Graphic design",
+		"download": {
+			"name": "tokyometro_fullsize.jpg",
+			"path": "images/work/tokyometro_fullsize.jpg"
+		}
 	}
 },
 {
-	"title": "Hello testing again",
-	"introduction": "Just some random words",
+	"title": "Oh, be a fine girl, kiss me",
+	"introduction": "Infographics",
+	"preview": "images/work/hr_preview_2.jpg",
+	"cover": ["images/work/hr_cover.jpg"],
 	"images": [
-		"https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg",
-		"https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg"
+		"images/work/hr_preview_big.jpg"
 	],
 	"style": "",
-	"category": "2",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla gravida consequat ipsum, in volutpat dolor. Duis id semper dui. Sed venenatis elit et laoreet consequat. Maecenas a purus ante. Mauris in imperdiet ex. Vivamus sit amet iaculis libero. Duis elementum varius placerat. Etiam eu vulputate justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam maximus feugiat urna, ut malesuada tortor ullamcorper quis.<br><br>Phasellus hendrerit neque eget ornare ultrices. Phasellus sit amet vestibulum lectus, ac sagittis enim. Nunc tempus semper odio sed eleifend. Integer gravida nisi in orci egestas, ac venenatis nunc rutrum.",
+	"color": "blue",
+	"category": ["3"],
+	"description": "The Hertzsprung-Russell diagram is one of the most important tools for astronomers. It's a graph showing the relationship between stars' mass, luminosity, surface temperature and how they are classified thereafter.<br><br>While I was studying astronomy I thought it would be a fun and educative idea to try and make a more appealing graph than the one printed in my course literature. The phrase \"Oh, be a fine girl, kiss me\" is used by astronomy students to memorize the different spectral types of stars shown in the diagram (O, B, A, F, G, K and M).",
 	"info": {
-		"for": "AxCrypt",
-		"at": "ZoCom",
-		"role": "Front and back end developer + Graphic designer",
-		"with": "Svante Seleborg",
-		"link": "http://axcrypt.net"
+		"role": "Graphic design",
+		"download": {
+			"name": "hr_fullsize.jpg",
+			"path": "images/work/hr_fullsize.jpg"
+		}
 	}
 },
 {
-	"title": "Hello testing again",
-	"introduction": "Just some random words",
+	"title": "Elasto.js",
+	"introduction": "JavaScript library",
+	"preview": "images/work/elasto_preview.jpg",
+	"cover": ["images/work/elasto_cover.jpg"],
 	"images": [
-		"https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg"
+		"images/work/elasto_demo.jpg"
 	],
 	"style": "",
-	"category": "1",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla gravida consequat ipsum, in volutpat dolor. Duis id semper dui. Sed venenatis elit et laoreet consequat. Maecenas a purus ante. Mauris in imperdiet ex. Vivamus sit amet iaculis libero. Duis elementum varius placerat. Etiam eu vulputate justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam maximus feugiat urna, ut malesuada tortor ullamcorper quis.<br><br>Phasellus hendrerit neque eget ornare ultrices. Phasellus sit amet vestibulum lectus, ac sagittis enim. Nunc tempus semper odio sed eleifend. Integer gravida nisi in orci egestas, ac venenatis nunc rutrum.",
+	"color": "red",
+	"category": ["1"],
+	"description": "A lightweight library for making responsive image grids. It’s mainly intended for displaying  search results but could probably be used in all sorts of situations. I have in many of my projects been in need of such a library, but never found one that met all my requirements. So, I finally decided to take matters into my own hands.<br><br>The project has given me valuable insight into how to use the self-contained module pattern to write scalable and structured JavaScript code. I will definitely be developing more libraries using this pattern in the future!<br><br>Oh, and there's a <a href='http://godiagonal.github.io/elasto-js/demo/' target='_blank'>demo here</a>.",
 	"info": {
-		"for": "AxCrypt",
-		"at": "ZoCom",
-		"role": "Front and back end developer + Graphic designer",
-		"with": "Svante Seleborg",
-		"link": "http://axcrypt.net"
+		"role": "Front end",
+		"link": "https://github.com/godiagonal/elasto-js"
 	}
 },
 {
-	"title": "Hello testing again",
-	"introduction": "Just some random words",
+	"title": "Wauv",
+	"introduction": "Web audio + Visualization",
+	"preview": "images/work/wauv_preview.jpg",
+	"cover": ["images/work/wauv_cover.jpg"],
 	"images": [
-		"https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg"
+		"images/work/wauv_search.jpg",
+		"images/work/wauv_speaker.jpg",
+		"images/work/wauv_sonar.jpg",
+		"images/work/wauv_hyperspace.jpg"
 	],
 	"style": "",
-	"category": "1",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla gravida consequat ipsum, in volutpat dolor. Duis id semper dui. Sed venenatis elit et laoreet consequat. Maecenas a purus ante. Mauris in imperdiet ex. Vivamus sit amet iaculis libero. Duis elementum varius placerat. Etiam eu vulputate justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam maximus feugiat urna, ut malesuada tortor ullamcorper quis.<br><br>Phasellus hendrerit neque eget ornare ultrices. Phasellus sit amet vestibulum lectus, ac sagittis enim. Nunc tempus semper odio sed eleifend. Integer gravida nisi in orci egestas, ac venenatis nunc rutrum.",
+	"color": "red",
+	"category": ["1"],
+	"description": "Wauv stands for <i>web audio visualizer</i> and is an experiment with audio visualization techniques on the web that I’ve been working on with my dear friend Lukas Peterson. It started as a small project for a course at Uppsala University, but we found the concept very appealing and wanted to see how far we could take it. Thus, wauv was born.<br><br>We’re developing wauv around the concepts of flexibility and scalability; to be able to implement new visualization ideas without rewriting the whole shebang. This is made possible by the use of object-oriented JavaScript and some brilliant libraries such as <a href='https://github.com/DmitryBaranovskiy/raphael' target='_blank'>Raphaël.js</a>. The audio is streamed through <a href='https://soundcloud.com/' target='_blank'>SoundCloud</a>, and I’m forever grateful for their awesome API and audio service!<br><br>Want to contribute and try making your own visualization? Have a look at our <a href='https://github.com/godiagonal/wauv' target='_blank'>GitHub repo</a>!",
 	"info": {
-		"for": "AxCrypt",
-		"at": "ZoCom",
-		"role": "Front and back end developer + Graphic designer",
-		"with": "Svante Seleborg",
-		"link": "http://axcrypt.net"
+		"role": "Front end",
+		"with": "Lukas Peterson",
+		"link": "http://wauv.it"
 	}
 },
 {
-	"title": "Hello testing again",
-	"introduction": "Just some random words",
+	"title": "Fritid för alla",
+	"introduction": "Interactive + Custom CMS",
+	"preview": "images/work/fritid_preview.jpg",
+	"cover": ["images/work/fritid_cover.jpg"],
 	"images": [
-		"https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/contrail.jpg"
+		"images/work/fritid_home.jpg",
+		"images/work/fritid_search.jpg",
+		"images/work/fritid_activity.jpg",
+		"images/work/fritid_profile.jpg",
+		"images/work/fritid_cms_activity.jpg",
+		"images/work/fritid_cms_user.jpg",
+		"images/work/fritid_cms_newsletters.jpg",
+		"images/work/fritid_cms_page.jpg",
+		"images/work/fritid_cms_documents.jpg",
+		"images/work/fritid_cms_form.jpg",
+		"images/work/fritid_cms_slideshow.jpg"
 	],
-	"style": "",
-	"category": "2",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla gravida consequat ipsum, in volutpat dolor. Duis id semper dui. Sed venenatis elit et laoreet consequat. Maecenas a purus ante. Mauris in imperdiet ex. Vivamus sit amet iaculis libero. Duis elementum varius placerat. Etiam eu vulputate justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam maximus feugiat urna, ut malesuada tortor ullamcorper quis.<br><br>Phasellus hendrerit neque eget ornare ultrices. Phasellus sit amet vestibulum lectus, ac sagittis enim. Nunc tempus semper odio sed eleifend. Integer gravida nisi in orci egestas, ac venenatis nunc rutrum.",
+	"style": "big",
+	"color": "purple",
+	"category": ["1", "2"],
+	"description": "A new web site with a custom made CMS for the non-profit organisation Fritid för alla in Uppsala. Fritid för alla work towards giving everyone, regardless of disability, the possibility of a rich and exciting leisure through recreational activities.<br><br>The design and layout of the new site tries to capture what’s most important for the organisation; fun and creativity, while still keeping it simple and modern.<br><br>The big challenge of this project was the CMS. It’s made from scratch using the MVC framework FuelPHP to fit the exact needs of the customer. Administrators can manage users, activties, newsletters, file uploads, slideshows, questionnaires and content on all web pages. The system also allows other non-profit organisations to create profiles and add activities of their own, which can then be viewed by visitors at the site. If you want to see the CMS in action, check the screenshots below.<br><br>The editorial chief, which is very familiar with Wordpress and Joomla, has stated that it’s the most efficient CMS she has used to date. I’m very pleased with how it turned out and will probably rehash the CMS for use in other projects in the future.",
 	"info": {
-		"for": "AxCrypt",
-		"at": "ZoCom",
-		"role": "Front and back end developer + Graphic designer",
-		"with": "Svante Seleborg",
-		"link": "http://axcrypt.net"
-	}
-},
-{
-	"title": "Hello testing again",
-	"introduction": "Just some random words",
-	"images": [
-		"https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/golden-hour.jpg"
-	],
-	"style": "",
-	"category": "3",
-	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla gravida consequat ipsum, in volutpat dolor. Duis id semper dui. Sed venenatis elit et laoreet consequat. Maecenas a purus ante. Mauris in imperdiet ex. Vivamus sit amet iaculis libero. Duis elementum varius placerat. Etiam eu vulputate justo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam maximus feugiat urna, ut malesuada tortor ullamcorper quis.<br><br>Phasellus hendrerit neque eget ornare ultrices. Phasellus sit amet vestibulum lectus, ac sagittis enim. Nunc tempus semper odio sed eleifend. Integer gravida nisi in orci egestas, ac venenatis nunc rutrum.",
-	"info": {
-		"for": "AxCrypt",
-		"at": "ZoCom",
-		"role": "Front and back end developer + Graphic designer",
-		"with": "Svante Seleborg",
-		"link": "http://axcrypt.net"
+		"for": "Fritid för alla",
+		"at": "Freelance",
+		"role": "Front end + Back end",
+		"link": "http://fritidforalla.se"
 	}
 }]

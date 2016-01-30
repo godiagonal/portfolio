@@ -111,3 +111,19 @@ $font-color-blue: $bg-color-blue;
   	-ms-flex: 1 1 auto;
 	flex: 1 1 auto;
 }
+
+@mixin greyscale($percent) {
+	-webkit-filter: grayscale($percent);
+	-moz-filter: grayscale($percent);
+	-ms-filter: grayscale($percent);
+	-o-filter: grayscale($percent);
+	filter: grayscale($percent);
+	filter: url(grayscale.svg#greyscale);
+	filter: gray;
+}
+
+@mixin box-shadow($properties) {
+	-webkit-box-shadow: $properties;
+	-moz-box-shadow: $properties;
+	box-shadow: $properties;
+}

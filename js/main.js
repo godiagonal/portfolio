@@ -36,14 +36,11 @@ var gui = {
 		$('a[href^="#"]').click(gui.scrollTo);
 		
 		gui.preloadImages([
-			'images/social/36_linkedin_white.png',
-			'images/social/36_linkedin_grey.png',
-			'images/social/36_linkedin_blue.png',
+			'images/social/36_github_white.png',
+			'images/social/36_github_blue.png',
 			'images/social/36_twitter_white.png',
-			'images/social/36_twitter_grey.png',
 			'images/social/36_twitter_purple.png',
 			'images/logo_white.png',
-			'images/logo_black.png',
 			'images/logo_orange.png'
 		]);
 		
@@ -214,14 +211,14 @@ var grid = {
 
 		$.each(work.data, function (index, project) {
 
-			var elem = $('<div/>').addClass('grid-item').addClass(project.style).data('project-id', index);
+			var elem = $('<div/>').addClass('grid-item').addClass(project.style).addClass(project.color).data('project-id', index);
 			var content = $('<div/>').addClass('grid-item-content').appendTo(elem);
-			var image = $('<img/>').attr('src', project.images[0]).appendTo(content);
-			var overlay = $('<div/>').addClass('overlay').addClass(work.categoryToColor(project.category)).appendTo(content);
+			var image = $('<img/>').attr('src', project.preview).appendTo(content);
+			var overlay = $('<div/>').addClass('overlay').appendTo(content);
 			var title = $('<div/>').addClass('title').text(project.title).appendTo(overlay);
 			var description = $('<div/>').addClass('description').text(project.introduction).appendTo(overlay);
 			var divider = $('<div/>').addClass('divider').appendTo(overlay);
-
+			
 			$('#work-grid').append(elem);
 
 		});
@@ -295,12 +292,13 @@ var modal = {
 	
 	load: function (project) {
 		
-		modal.detailColor = work.categoryToColor(project.category);
+		modal.detailColor = project.color;
 		
 		$('#project-title').text(project.title);
 		$('#project-introduction').text(project.introduction);
 		$('#project-description').html(project.description);
 		$('#project-info').empty();
+		$('#project-cover').empty();
 		$('#project-images').empty();
 		
 		if (project.info) {
@@ -327,6 +325,10 @@ var modal = {
 						infoKey = 'Live link';
 						infoValue = $('<a/>').text(project.info[key]).attr('href', project.info[key]).attr('target', '_blank');
 						break;
+					case 'download':
+						infoKey = 'Download';
+						infoValue = $('<a/>').text(project.info[key].name).attr('href', project.info[key].path).attr('target', '_blank');
+						break;
 				}
 				
 				var li = $('<li/>').text(infoKey + ': ');
@@ -337,28 +339,42 @@ var modal = {
 			
 		}
 		
-		if (project.images) {
+		if (project.cover) {
 			
 			var nav = $('<ul/>').addClass('nav');
 			
-			for (var i = 0; i < project.images.length; i++) {
+			for (var i = 0; i < project.cover.length; i++) {
 				
-				var image = $('<div/>').attr('id', 'image-' + i).addClass('image').css('background-image', 'url(' + project.images[i] + ')');
+				var image = $('<div/>').attr('id', 'image-' + i).addClass('image').css('background-image', 'url(' + project.cover[i] + ')');
 				
 				// Only create navigation if there's more than one image
-				if (project.images.length > 1)
+				if (project.cover.length > 1)
 					var navLink = $('<li/>').attr('id', 'nav-' + i).data('image-index', i).click(modal.goToImage).appendTo(nav);
+				
+				$('#project-cover').append(image);
+				
+			}
+			
+			$('#project-cover').append(nav);
+
+			modal.carouselIndex = 0;
+			modal.carouselImages = project.cover;
+			modal.stopCarousel();
+			modal.startCarousel();
+		
+		}
+		
+		if (project.images) {
+			
+			for (var i = 0; i < project.images.length; i++) {
+				
+				var image = $('<img/>').attr('src', project.images[i]);
 				
 				$('#project-images').append(image);
 				
 			}
 			
-			$('#project-images').append(nav);
-
-			modal.carouselIndex = 0;
-			modal.carouselImages = project.images;
-			modal.stopCarousel();
-			modal.startCarousel();
+			modal.setAnimationWaypoints();
 		
 		}
 		
@@ -366,32 +382,21 @@ var modal = {
 
 	show: function () {
 
-		$('body').removeClass(function () {
-
-			var classes = '';
-
-			for (var key in work.includeCategories) {
-				classes += work.categoryToColor(key) + ' ';
-			}
-
-			return classes;
-
-		}).addClass(modal.detailColor).addClass('show-modal');
-		
+		$('body').removeClass('red purple blue').addClass(modal.detailColor).addClass('show-modal');
+		$('#project .content').css('opacity', 1);
 		$('#project').fadeIn();
 		
 		if (!gui.isMobile) {
-			$('#project .flex').addClass('animate fadeIn');
-			$('#project-title').addClass('animate fadeInUpSmall');
-			$('#project-introduction').addClass('animate fadeInUp');
+			$('#project .flex').addClass('animate fadeInUpSmall');
 		}
 		
 	},
 
 	hide: function () {
-
+		
 		$('body').removeClass('show-modal');
-		$('#project').fadeOut();
+		$('#project .content').css('opacity', 0);
+		$('#project').scrollTop(0).fadeOut();
 		
 		modal.stopCarousel();
 
@@ -440,12 +445,32 @@ var modal = {
 	
 	showImage: function (index) {
 		
-		$('#project-images .image:not(#image-' + index + ')').removeClass('active');
-		$('#project-images #image-' + index).addClass('active');
+		$('#project-cover .image:not(#image-' + index + ')').removeClass('active');
+		$('#project-cover #image-' + index).addClass('active');
 		
-		$('#project-images .nav li:not(#nav-' + index + ')').removeClass('active');
-		$('#project-images #nav-' + index).addClass('active');
+		$('#project-cover .nav li:not(#nav-' + index + ')').removeClass('active');
+		$('#project-cover #nav-' + index).addClass('active');
 		
+	},
+
+	setAnimationWaypoints: function () {
+		
+		if (gui.isMobile) {
+			$('#project-images img').css('opacity', 1);
+			return;
+		}
+
+		$('#project-images').imagesLoaded(function () {
+		
+			$('#project-images img').waypoint(function (direction) {
+				$(this.element).addClass('animate fadeInUpSmall');
+			}, {
+				offset: '95%',
+				context: '#project'
+			});
+			
+		});
+
 	}
 
 };
@@ -468,34 +493,20 @@ var work = {
 			// Filter on category
 			$.each(data, function (index, project) {
 				
-				if (work.includeCategories[project.category])
-					work.data.push(project);
+				for (var i = 0; i < project.category.length; i++) {
+					
+					if (work.includeCategories[project.category[i]]) {
+						work.data.push(project);
+						break;
+					}
+					
+				}
 				
 			});
 
 			callback();
 
 		});
-
-	},
-
-	categoryToColor: function (category) {
-
-		var color;
-
-		switch (category) {
-		case '1':
-			color = 'red';
-			break;
-		case '2':
-			color = 'purple';
-			break;
-		case '3':
-			color = 'blue';
-			break;
-		}
-
-		return color;
 
 	}
 
