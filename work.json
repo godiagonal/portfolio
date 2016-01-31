@@ -1,7 +1,7 @@
 [{
 	"title": "AxCrypt",
 	"introduction": "Interactive + ASP.NET MVC + Branding",
-	"preview": "images/work/axcrypt_preview.jpg",
+	"preview": "images/work/axcrypt_preview_square.jpg",
 	"cover": ["images/work/axcrypt_cover.jpg"],
 	"images": [
 		"images/work/axcrypt_home.jpg",
@@ -97,7 +97,7 @@
 {
 	"title": "Oh, be a fine girl, kiss me",
 	"introduction": "Infographics",
-	"preview": "images/work/hr_preview_vertical.jpg",
+	"preview": "images/work/hr_preview.jpg",
 	"cover": ["images/work/hr_cover.jpg"],
 	"images": [
 		"images/work/hr_preview_big.jpg"
