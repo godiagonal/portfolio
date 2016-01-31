@@ -1,7 +1,7 @@
 [{
 	"title": "AxCrypt",
 	"introduction": "Interactive + ASP.NET MVC + Branding",
-	"preview": "images/work/axcrypt_cover.jpg",
+	"preview": "images/work/axcrypt_preview.jpg",
 	"cover": ["images/work/axcrypt_cover.jpg"],
 	"images": [
 		"images/work/axcrypt_home.jpg",
@@ -26,7 +26,7 @@
 {
 	"title": "Scroll the Solar System",
 	"introduction": "Interactive + Educational + Graphic design",
-	"preview": "images/work/solarsystem_preview.jpg",
+	"preview": "images/work/solarsystem_preview_square.jpg",
 	"cover": ["images/work/solarsystem_cover.jpg"],
 	"images": [
 		"images/work/solarsystem_overview.jpg",
@@ -45,66 +45,9 @@
 	}
 },
 {
-	"title": "Tokyo Metro 2010",
-	"introduction": "Infographics",
-	"preview": "images/work/tokyometro_preview.jpg",
-	"cover": ["images/work/tokyometro_cover.jpg"],
-	"images": [
-		"images/work/tokyometro_preview_big.jpg"
-	],
-	"style": "",
-	"color": "blue",
-	"category": ["3"],
-	"description": "This graphic is based on a spreadsheet of Tokyo Metro statistics from 2010, including amount of passengers per line and railway track length. In addition, I added the white circles which represent the amount of boarding and disembarking passengers per station and the lines between them which show how the stations are connected to each other.<br><br>If printed in A3 format, the scale of the diagram's diameter relative to the actual railway track length (1:100 000) is accurate. Practical use? None really!",
-	"info": {
-		"role": "Graphic design",
-		"download": {
-			"name": "tokyometro_fullsize.jpg",
-			"path": "images/work/tokyometro_fullsize.jpg"
-		}
-	}
-},
-{
-	"title": "Oh, be a fine girl, kiss me",
-	"introduction": "Infographics",
-	"preview": "images/work/hr_preview_2.jpg",
-	"cover": ["images/work/hr_cover.jpg"],
-	"images": [
-		"images/work/hr_preview_big.jpg"
-	],
-	"style": "",
-	"color": "blue",
-	"category": ["3"],
-	"description": "The Hertzsprung-Russell diagram is one of the most important tools for astronomers. It's a graph showing the relationship between stars' mass, luminosity, surface temperature and how they are classified thereafter.<br><br>While I was studying astronomy I thought it would be a fun and educative idea to try and make a more appealing graph than the one printed in my course literature. The phrase \"Oh, be a fine girl, kiss me\" is used by astronomy students to memorize the different spectral types of stars shown in the diagram (O, B, A, F, G, K and M).",
-	"info": {
-		"role": "Graphic design",
-		"download": {
-			"name": "hr_fullsize.jpg",
-			"path": "images/work/hr_fullsize.jpg"
-		}
-	}
-},
-{
-	"title": "Elasto.js",
-	"introduction": "JavaScript library",
-	"preview": "images/work/elasto_preview.jpg",
-	"cover": ["images/work/elasto_cover.jpg"],
-	"images": [
-		"images/work/elasto_demo.jpg"
-	],
-	"style": "",
-	"color": "red",
-	"category": ["1"],
-	"description": "A lightweight library for making responsive image grids. It’s mainly intended for displaying  search results but could probably be used in all sorts of situations. I have in many of my projects been in need of such a library, but never found one that met all my requirements. So, I finally decided to take matters into my own hands.<br><br>The project has given me valuable insight into how to use the self-contained module pattern to write scalable and structured JavaScript code. I will definitely be developing more libraries using this pattern in the future!<br><br>Oh, and there's a <a href='http://godiagonal.github.io/elasto-js/demo/' target='_blank'>demo here</a>.",
-	"info": {
-		"role": "Front end",
-		"link": "https://github.com/godiagonal/elasto-js"
-	}
-},
-{
 	"title": "Wauv",
 	"introduction": "Web audio + Visualization",
-	"preview": "images/work/wauv_preview.jpg",
+	"preview": "images/work/wauv_preview_square.jpg",
 	"cover": ["images/work/wauv_cover.jpg"],
 	"images": [
 		"images/work/wauv_search.jpg",
@@ -125,7 +68,7 @@
 {
 	"title": "Fritid för alla",
 	"introduction": "Interactive + Custom CMS",
-	"preview": "images/work/fritid_preview.jpg",
+	"preview": "images/work/fritid_preview_square.jpg",
 	"cover": ["images/work/fritid_cover.jpg"],
 	"images": [
 		"images/work/fritid_home.jpg",
@@ -149,5 +92,83 @@
 		"at": "Freelance",
 		"role": "Front end + Back end",
 		"link": "http://fritidforalla.se"
+	}
+},
+{
+	"title": "Oh, be a fine girl, kiss me",
+	"introduction": "Infographics",
+	"preview": "images/work/hr_preview_vertical.jpg",
+	"cover": ["images/work/hr_cover.jpg"],
+	"images": [
+		"images/work/hr_preview_big.jpg"
+	],
+	"style": "",
+	"color": "blue",
+	"category": ["3"],
+	"description": "The Hertzsprung-Russell diagram is one of the most important tools for astronomers. It's a graph showing the relationship between stars' mass, luminosity, surface temperature and how they are classified thereafter.<br><br>While I was studying astronomy I thought it would be a fun and educative idea to try and make a more appealing graph than the one printed in my course literature. The phrase \"Oh, be a fine girl, kiss me\" is used by astronomy students to memorize the different spectral types of stars shown in the diagram (O, B, A, F, G, K and M).",
+	"info": {
+		"role": "Graphic design",
+		"download": {
+			"name": "hr_fullsize.jpg",
+			"path": "images/work/hr_fullsize.jpg"
+		}
+	}
+},
+{
+	"title": "Elasto.js",
+	"introduction": "JavaScript library",
+	"preview": "images/work/elasto_preview_square.jpg",
+	"cover": ["images/work/elasto_cover.jpg"],
+	"images": [
+		"images/work/elasto_demo.jpg"
+	],
+	"style": "",
+	"color": "red",
+	"category": ["1"],
+	"description": "A lightweight library for making responsive image grids. It’s mainly intended for displaying  search results but could probably be used in all sorts of situations. I have in many of my projects been in need of such a library, but never found one that met all my requirements. So, I finally decided to take matters into my own hands.<br><br>The project has given me valuable insight into how to use the self-contained module pattern to write scalable and structured JavaScript code. I will definitely be developing more libraries using this pattern in the future!<br><br>Oh, and there's a <a href='http://godiagonal.github.io/elasto-js/demo/' target='_blank'>demo here</a>.",
+	"info": {
+		"role": "Front end",
+		"link": "https://github.com/godiagonal/elasto-js"
+	}
+},
+{
+	"title": "Game On",
+	"introduction": "Prototyping + Graphic design",
+	"preview": "images/work/gameon_preview_square.jpg",
+	"cover": ["images/work/gameon_cover.jpg"],
+	"images": [
+		"images/work/gameon_collage_1.jpg",
+		"images/work/gameon_collage_2.jpg",
+		"images/work/gameon_collage_3.jpg",
+		"images/work/gameon_collage_4.jpg"
+	],
+	"imageStyle": "no-shadow",
+	"style": "",
+	"color": "blue",
+	"category": ["3"],
+	"description": "As part of a university course in human-computer interaction we were tasked to come up with an idea for a mobile app that would enhance the way we work out with machines at the gym. Our idea was to make exercising more social and allow users to compete with others and themselves - an already proven concept. We also came up with a reward system and an exercise mode that would emulate running on real terrain on a treadmill by using geological data from the Google Maps API.<br><br>Although the app was never developed I took the time to create some graphical content and a mockup of what it could’ve looked like. Check it out below!",
+	"info": {
+		"role": "Graphic design + Mockup",
+		"with": "Filip Klementsson, Nikola Katardijev, Henrik Johansen & Fredrik Christmansson"
+	}
+},
+{
+	"title": "Tokyo Metro 2010",
+	"introduction": "Infographics",
+	"preview": "images/work/tokyometro_preview_square.jpg",
+	"cover": ["images/work/tokyometro_cover.jpg"],
+	"images": [
+		"images/work/tokyometro_preview_big.jpg"
+	],
+	"style": "",
+	"color": "blue",
+	"category": ["3"],
+	"description": "This graphic is based on a spreadsheet of Tokyo Metro statistics from 2010, including amount of passengers per line and railway track length. In addition, I added the white circles which represent the amount of boarding and disembarking passengers per station and the lines between them which show how the stations are connected to each other.<br><br>If printed in A3 format, the scale of the diagram's diameter relative to the actual railway track length (1:100 000) is accurate. Practical use? None really!",
+	"info": {
+		"role": "Graphic design",
+		"download": {
+			"name": "tokyometro_fullsize.jpg",
+			"path": "images/work/tokyometro_fullsize.jpg"
+		}
 	}
 }]

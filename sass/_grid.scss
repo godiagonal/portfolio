@@ -6,7 +6,7 @@
 
 .grid-sizer,
 .grid-item {
-	width: 33.333%;
+	width: 25%;
 		
 	@media #{$screen-small} {
 		width: 100%;
@@ -87,14 +87,10 @@ $overlay-opacity: 0.9;
 }
 
 .grid-item.big {
-	width: 66.666%;
+	width: 50%;
 		
 	@media #{$screen-small} {
 		width: 100%;
-	}
-		
-	@media #{$screen-medium} {
-		width: 50%;
 	}
 }
 

@@ -300,6 +300,7 @@ var modal = {
 		$('#project-info').empty();
 		$('#project-cover').empty();
 		$('#project-images').empty();
+		$('#project-images').removeClass();
 		
 		if (project.info) {
 		
@@ -365,6 +366,9 @@ var modal = {
 		}
 		
 		if (project.images) {
+		
+			if (project.imageStyle)
+				$('#project-images').addClass(project.imageStyle);
 			
 			for (var i = 0; i < project.images.length; i++) {
 				
