@@ -158,8 +158,24 @@ var gui = {
 
 	toggleCategory: function () {
 
-		$(this).toggleClass('inactive');
-		work.includeCategories[$(this).data('category')] = !work.includeCategories[$(this).data('category')];
+		$('#work .categories .button').addClass('inactive');
+		$(this).removeClass('inactive');
+		
+		var selectedCategory = $(this).data('category');
+		
+		// Show all or hide all depending on if category is "All"
+		for (var category in work.includeCategories) {
+			
+			if (work.includeCategories.hasOwnProperty(category))
+				work.includeCategories[category] = selectedCategory == 0;
+			
+		}
+		
+		// Show the selected category
+		if (selectedCategory != 0)
+			work.includeCategories[selectedCategory] = true;
+		
+		// Reload grid
 		grid.init();
 
 	},
