@@ -32,7 +32,7 @@
 	"style": "",
 	"color": "red",
 	"category": ["1"],
-	"description": "Lorem ipsum",
+	"description": "Ambiancer is a synth pad combined with a sequencer that can be used to create ambient soundscapes. It uses the Web Audio API to generate the sound through oscillators and process the sound through custom made audio effects (reverb, delay, low pass filter and distortion). Different qualities of the sound can be adjusted with the controls in the GUI and also by tilting the device when running the app on a smartphone.<br><br>Ambiancer was developed as a demo application for a lecture about making music with JavaScript that I held at the DataTjej conference in Uppsala 2017.",
 	"info": {
 		"role": "Interactive + Web audio + Visualization",
 		"link": "http://godiagonal.com/ambiancer"
@@ -49,7 +49,7 @@
 	"style": "",
 	"color": "red",
 	"category": ["1"],
-	"description": "Lorem ipsum",
+	"description": "A simple keyboard that can be played with regular computer keys. The user can modify the quality of the sound by changing wave shape, octave and turning on different effects. It uses the Web Audio API to generate the sound through oscillators and process the sound through custom made audio effects.<br><br>Browser synth was developed as a demo application for a lecture about making music with JavaScript that I held at the DataTjej conference in Uppsala 2017.",
 	"info": {
 		"role": "Interactive + Web audio",
 		"link": "http://godiagonal.com/synth"
