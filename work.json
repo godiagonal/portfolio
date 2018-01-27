@@ -34,7 +34,7 @@
 	"category": ["1"],
 	"description": "Ambiancer is a synth pad combined with a sequencer that can be used to create ambient soundscapes. It uses the Web Audio API to generate the sound through oscillators and process the sound through custom made audio effects (reverb, delay, low pass filter and distortion). Different qualities of the sound can be adjusted with the controls in the GUI and also by tilting the device when running the app on a smartphone.<br><br>Ambiancer was developed as a demo application for a lecture about making music with JavaScript that I held at the DataTjej conference in Uppsala 2017.",
 	"info": {
-		"role": "Interactive + Web audio + Visualization",
+		"role": "Front end",
 		"link": "http://godiagonal.com/ambiancer"
 	}
 },
@@ -51,7 +51,7 @@
 	"category": ["1"],
 	"description": "A simple keyboard that can be played with regular computer keys. The user can modify the quality of the sound by changing wave shape, octave and turning on different effects. It uses the Web Audio API to generate the sound through oscillators and process the sound through custom made audio effects.<br><br>Browser synth was developed as a demo application for a lecture about making music with JavaScript that I held at the DataTjej conference in Uppsala 2017.",
 	"info": {
-		"role": "Interactive + Web audio",
+		"role": "Front end",
 		"link": "http://godiagonal.com/synth"
 	}
 },
@@ -78,6 +78,23 @@
 		"role": "Front end + Back end + Graphic design",
 		"with": "Svante Seleborg",
 		"link": "http://axcrypt.net"
+	}
+},
+{
+	"title": "3D Multiplayer Demo",
+	"introduction": "Interactive + 3D + Web sockets",
+	"preview": "images/work/3d_preview_square.jpg",
+	"cover": ["images/work/3d_cover_2.jpg"],
+	"images": [
+		"images/work/3d_default.jpg"
+	],
+	"style": "",
+	"color": "red",
+	"category": ["1", "2"],
+	"description": "During my time as a teacher in web development I developed a simple multiplayer game to demonstrate one of the many use cases of Node.js and WebSockets. There are no real game mechanics in the application so far, other than jumping on blocks, but it could be used as a foundation for a future 3D game project.<br><br>The server is developed in Node.js and uses WebSockets (Socket.io) to keep the game world in sync for all connected clients. Three.js, a wrapper framework for WebGL, is used for rendering the 3D graphics. Connected clients can communicate and send commands, e.g. name change requests, to the server via an in-game chat.",
+	"info": {
+		"role": "Front end + Back end",
+		"link": "https://goo.gl/YdTamM"
 	}
 },
 {
